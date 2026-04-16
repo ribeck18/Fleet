@@ -4,4 +4,5 @@ public enum VehicleStatus{
 	Active,
 	Down,
 	MaintenanceNeeded,
+	ServiceNeeded,
 }
