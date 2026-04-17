@@ -1,5 +1,4 @@
 ﻿using dotenv.net;
-using Microsoft.AspNe 
 
 
 DotEnv.Load();
@@ -9,5 +8,6 @@ string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING"
 
 
 var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
  
