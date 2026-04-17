@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wORJJMAo9lU=",
+  "dgSpecHash": "k91m26xcZqs=",
   "success": true,
-  "projectFilePath": "/home/rileybeck/projects/Fleet/Fleet.csproj",
+  "projectFilePath": "/Users/rileybeck/projects/Fleet/Fleet.csproj",
   "expectedPackageFiles": [
-    "/home/rileybeck/.nuget/packages/dotenv.net/4.0.1/dotenv.net.4.0.1.nupkg.sha512",
-    "/home/rileybeck/.nuget/packages/npgsql/10.0.2/npgsql.10.0.2.nupkg.sha512"
+    "/Users/rileybeck/.nuget/packages/dotenv.net/4.0.1/dotenv.net.4.0.1.nupkg.sha512",
+    "/Users/rileybeck/.nuget/packages/npgsql/10.0.2/npgsql.10.0.2.nupkg.sha512"
   ],
   "logs": []
 }

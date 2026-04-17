@@ -1,16 +1,21 @@
 namespace Fleet.Data;
+
+using Fleet.Models;
 using Npgsql;
 
-
 class VehicleData{
-	string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
-		?? throw new Exception("Missing CONNECTION_STRING");
-	
-	//Task basically means do this in the background. If you use await, the method must return a Task.
-	public async Task VehicleDatabase(){
-		await using var dataSource = NpgsqlDataSource.Create(connectionString); 
+	private readonly DatabaseConnection _db;
+
+	public VehicleData(DatabaseConnection db){
+		_db = db;
 	}
 
+	public async Task CreateVehicle(Dictionary<string, string> VehicleDict){
 
+		await _db.Database(async (connectionPoint) =>
+			{
+				await using var cmd = new NpgsqlCommand("INSERT INTO ")
+			});
+	}
 }
 

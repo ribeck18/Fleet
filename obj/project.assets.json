@@ -68,25 +68,24 @@
     ]
   },
   "packageFolders": {
-    "/home/rileybeck/.nuget/packages/": {}
+    "/Users/rileybeck/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rileybeck/projects/Fleet/Fleet.csproj",
+      "projectUniqueName": "/Users/rileybeck/projects/Fleet/Fleet.csproj",
       "projectName": "Fleet",
-      "projectPath": "/home/rileybeck/projects/Fleet/Fleet.csproj",
-      "packagesPath": "/home/rileybeck/.nuget/packages/",
-      "outputPath": "/home/rileybeck/projects/Fleet/obj/",
+      "projectPath": "/Users/rileybeck/projects/Fleet/Fleet.csproj",
+      "packagesPath": "/Users/rileybeck/.nuget/packages/",
+      "outputPath": "/Users/rileybeck/projects/Fleet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rileybeck/.nuget/NuGet/NuGet.Config"
+        "/Users/rileybeck/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -139,7 +138,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.106/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

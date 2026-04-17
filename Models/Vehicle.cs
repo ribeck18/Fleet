@@ -48,5 +48,9 @@ class Vehicle{
 		}
 	}
 
+	public Dictionary<string, string> GetVehicleDict(){
+		//Turn into a dict to pass to database.
+	}
+
 
 }
