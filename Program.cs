@@ -11,4 +11,3 @@ var app = builder.Build();
  
 //Testing the database insert. Delete later.
 //
-Vehicle vehicle = new Vehicle("name")
