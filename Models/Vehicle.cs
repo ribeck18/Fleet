@@ -3,7 +3,7 @@ namespace Fleet.Models;
 using Fleet.Models.Enums;
 
 
-class Vehicle{
+public class Vehicle{
 	//This is not the primary key from database, it is a user entered id.
 	public int VehicleId {get; private set;}
 	public string Vin {get;} 

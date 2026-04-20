@@ -1,5 +1,6 @@
 using Fleet.Models;
 using Fleet.Models.Enums;
+using Fleet.Services;
 
 public static class VehicleRoutes{
 
@@ -19,9 +20,16 @@ public static class VehicleRoutes{
 			bool isSevere) => {
 				Vehicle vehicle = new Vehicle(id, vin, name, make, model, year, mileage, status);
 				//Also need to add it to the database.
+
+				//This is temporary (maybe) it adds it to a list in the working memory.
+				VehicleService.AddVehicle(vehicle);
 	
 				return vehicle;
 			} 
 		);
+
+		app.MapGet("/vehicleList",() => VehicleService.GetVehicles());
+
+
 	}
 }
