@@ -1,2 +1,7 @@
 appsettings.development.json
 .env
+bin/
+obj/
+.DS_store
+.log 
+

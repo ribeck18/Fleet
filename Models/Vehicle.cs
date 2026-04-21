@@ -32,6 +32,7 @@ public class Vehicle{
 		Status = status;
 		
 		ProtectStatus();
+		CheckSetSevereIssue();
 	}
 	//For creating a vehicle from the database
 	public Vehicle(int id, string vin, string name, string make, string model, int year, int mileage, VehicleStatus status, int primaryKey){
@@ -46,6 +47,7 @@ public class Vehicle{
 		PrimaryKey = primaryKey; 
 		
 		ProtectStatus();
+		CheckSetSevereIssue();
 	}
 
 	private void ProtectStatus(){
