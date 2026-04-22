@@ -1,5 +1,6 @@
 namespace Fleet.Data;
 
+using Fleet.Models;
 using Npgsql;
 
 class DatabaseConnection{
@@ -8,10 +9,17 @@ class DatabaseConnection{
 
 	
 	//Task basically means do this in the background. If you use await, the method must return a Task.
+	//
+	//2 overloads here
 	public async Task Database(Func<NpgsqlConnection, Task> action){
 		//Essentially this connects to the database, makes a connection point, then awaits an action.
 		await using var dataSource = NpgsqlDataSource.Create(_connectionString); 
 		await using var connectionPoint = await dataSource.OpenConnectionAsync();
 		await action(connectionPoint);
+	}
+	public async Task<Vehicle> Database(Func<NpgsqlConnection, Task<Vehicle>> action){
+		await using var dataSource = NpgsqlDataSource.Create(_connectionString);
+		await using var connectionPoint = await dataSource.OpenConnectionAsync();
+		return await action(connectionPoint);
 	}
 }

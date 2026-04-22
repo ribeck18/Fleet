@@ -5,12 +5,12 @@ using Fleet.Models.Enums;
 
 public class Vehicle{
 	//This is not the primary key from database, it is a user entered id.
-	public int VehicleId {get; private set;}
+	public string VehicleId {get; private set;}
 	public string Vin {get;} 
-	public string Name {get; set;}
+	public string Title {get; set;}
 	public string Make {get; set;}
 	public string Model {get; set;}
-	public int Year {get; set;} 
+	public int ModelYear {get; set;} 
  	public int Mileage {get; set;}
 	public VehicleStatus Status {get; set;} = VehicleStatus.Active;
 	public int PrimaryKey {get;}
@@ -21,13 +21,13 @@ public class Vehicle{
 	
 
 	//For creating an entierly new vehicle.	
-	public Vehicle(int id, string vin, string name, string make, string model, int year, int mileage, VehicleStatus status){
+	public Vehicle(string id, string vin, string title, string make, string model, int modelYear, int mileage, VehicleStatus status){
 		VehicleId = id;
 		Vin = vin;
-		Name = name;
+		Title = title;
 		Make = make;
 		Model = model;
-		Year = year;
+		ModelYear = modelYear;
 		Mileage = mileage;
 		Status = status;
 		
@@ -35,17 +35,18 @@ public class Vehicle{
 		CheckSetSevereIssue();
 	}
 	//For creating a vehicle from the database
-	public Vehicle(int id, string vin, string name, string make, string model, int year, int mileage, VehicleStatus status, int primaryKey){
+	public Vehicle(int primaryKey, string id, string vin, string title, string make, string model, int modelYear, int mileage, VehicleStatus status){
+		PrimaryKey = primaryKey; 
 		VehicleId = id;
 		Vin = vin;
-		Name = name;
+		Title = title;
 		Make = make;
 		Model = model;
-		Year = year;
+		ModelYear = modelYear;
 		Mileage = mileage;
 		Status = status;
-		PrimaryKey = primaryKey; 
 		
+		SetBools();	
 		ProtectStatus();
 		CheckSetSevereIssue();
 	}
@@ -63,6 +64,24 @@ public class Vehicle{
 	private void CheckSetSevereIssue(){
 		if (IsSevere == true){
 			Status = VehicleStatus.Down;
+		}
+	}
+
+	private void SetBools(){
+		if (Status == VehicleStatus.Down){
+			IsSevere = true;
+		}
+		else if (Status == VehicleStatus.MaintenanceNeeded){
+			NeedsMaintenance = true;
+		}
+		else if (Status == VehicleStatus.ServiceNeeded){
+			NeedsService = true;
+		}
+		else
+		{
+			IsSevere = false;
+			NeedsMaintenance = false;
+			NeedsService = false;
 		}
 	}
 

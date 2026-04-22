@@ -1,4 +1,5 @@
 ﻿using dotenv.net;
+using System.Text.Json.Serialization;
 
 //Load in the Environment
 DotEnv.Load();
@@ -8,6 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureHttpJsonOptions(options =>
+	{
+
+    	options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+
+	});
+
 
 var app = builder.Build();
 

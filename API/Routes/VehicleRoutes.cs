@@ -14,7 +14,7 @@ public static class VehicleRoutes{
 	public static void MapVehicleRoutes(this WebApplication app){
 
 		app.MapPost("/createVehicle", async(
-			int id, 
+			string id, 
 			string vin, 
 			string name, 
 			string make, 
@@ -42,8 +42,10 @@ public static class VehicleRoutes{
 		//Get from the database
 		app.MapGet("/vehicle{id}", async(int id) => {
 				VehicleData table = GetVehiclesTable();
-				await table.GetVehicle(id);
+
+				return await table.GetVehicle(id);
 				});
+
 		app.MapGet("/vehicleList", async() => {
 				VehicleData table = GetVehiclesTable();
 				await table.GetVehicles();
